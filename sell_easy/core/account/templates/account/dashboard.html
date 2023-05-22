@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard {% endblock %}
+
+
+{% block content %}
+
+<div class= 'container'>
+
+    <h1>{{store.name}}</h1>
+    <aside>
+        <div>
+            {% comment %} <img src= "{% static user.img %}"/> {% endcomment %}
+            <h2>{{user.first_name}}</h2>
+        </div>
+        <p>Products</p>
+    </aside>
+
+    <main>
+        <h2>Welcome, {{store.owner.first_name}}</h2>
+        <h3>Welcome! This is the Dashboard</h3>
+
+        {% for product in store.products.all %}
+            <div>
+                {% comment %} <img src= "{% static product.img %}"/> {% endcomment %}
+                <h2>{{product.name|title}}</h2>
+                <p>{{product.description}}</p>
+                <p>{{product.price}}</p>
+                <p>{{product.quantity}}</p>
+            </div>
+        {% endfor %}
+    </main>
+</div>
+{% endblock %}

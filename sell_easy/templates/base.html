@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description" content="A simple PHP MVC framework">
+        <title>{% block title %} {% endblock %}</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        {% block stylesheets %} {% endblock %}
+    </head>
+    <body>
+        <header></header>
+        <main>{% block content %}{% endblock %}</main>
+        <footer></footer>
+        {% comment %} {% block javascripts %} {% endblock %} {% endcomment %}
+    </body>
+</html>

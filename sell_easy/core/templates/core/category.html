@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>Product Categories</h1>
+    {% comment %} <p>Vehicle</p>
+    <p>Clothing</p> {% endcomment %}
+    {% for category in categories %}
+        <h2>{{ category.name }}</h2>
+
+    {% endfor %}
+
+{% endblock %}
+```

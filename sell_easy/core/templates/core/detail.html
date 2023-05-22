@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+<link type="text/css" rel="stylesheet" href="{% static 'products.css' %}"/>
+
+{% block title %} {{ product.name }} 
+{% endblock %}
+
+{% block content %}
+
+<div>
+    <h2>{{product.name}}</h2>
+    <p>{{product.desc}}</p>
+    <h3>{{product.price}}</h3>
+
+    <span>
+        <button>Add to Cart </button>
+        <span>
+           <button> - </button>
+            <p>1</p>
+           <button> + </button>
+        </span>
+
+    
+    </span>
+    {% with reviews=product.get_num_reviews ratings=product.average_ratings%}              
+             <div class="rating">  
+        <h2>Ratings: {{ ratings }} ratings</h2>
+                <p>Review: {{ reviews }} reviews</p>
+            </div>
+            {% endwith %}
+    <div class='reviews'>
+    {% for rating in product.ratings.all %}
+        <p comment: {{rating.remark}} - {{rating.rating}}></p>
+    {% endfor %}
+    </div>
+</div>
+        <div>
+            
+            <h2>Related Products</h2>
+            <div style='display:grid; grid-template-column: 1fr 1fr 1fr; padding:20px; background-color: gray;'>
+            {% for products in related_products %}
+            <a href=" url 'product' product.id ">
+                <div>                
+                <h3>{{product.name}}</h3>
+                <h3>{{product.price}}</h3>
+                <p>Seller: {{product.store.name}}</p>
+            </div>
+        </a>
+        </div>
+    {% endfor %}
+        </div>
+
+        <
+{% endblock %}
+
