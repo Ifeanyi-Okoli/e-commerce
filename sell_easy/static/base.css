@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,400;1,500;1,700;1,900&display=swap');
+
+
+:root{
+    --background-color: A5D7E8;
+    --primary-color: #0B2447;
+    --secondary-color: #ED6D6D;
+    --tertiary-color: #F0F0F0;
+    --main-color: #FFFFFF;
+    --accent-color: #F2F2F2;
+    --text-color: #000000;
+    --text-color-light: #FFFFFF;
+
+}
+
+*{
+    margin: 0;
+    box-sizing:border-box;
+
+}
+
+html{
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif, 'Manrope';
+}
+
+.section{
+    padding: 10px;
+}
+
+.section-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.card{
+    background-color: white;
+}
+
+.section-heading{
+    font-family: 'Manrope';
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+nav, ,middle, .right, .auth{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--primary-color);
+}
+
+.shopping-cart{
+    background-color: var(--primary-color);
+    position: relative;
+    padding: 5px;
+    right: 0;
+    top: 0;
+    bottom:0;
+    color:white;
+}
+
+.right ul{
+    list-style: none;
+}
+
+.discount{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 20px 0;
+}
+
+.discount button{
+    background-color: transparent;
+    font-size: 40px;
+    border: none;
+}

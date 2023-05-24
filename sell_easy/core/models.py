@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib import admin
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db.models import Q, Max, QuerySet
 from core.account.models import Profile
@@ -13,6 +14,11 @@ class Store(models.Model):
     
     def __str__(self) -> str:
        return self.name
+   
+    @admin.display(description="Total Products")
+    def total_products(self):
+     #    total = self.total_products
+        return self.products.count()
 
 
 class Category(models.Model):

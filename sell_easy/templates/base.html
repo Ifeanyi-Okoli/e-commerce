@@ -1,3 +1,5 @@
+{% load static %}
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -6,12 +8,20 @@
         <meta name="description" content="A simple PHP MVC framework">
         <title>{% block title %} {% endblock %}</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         {% block stylesheets %} {% endblock %}
     </head>
     <body>
-        <header></header>
-        <main>{% block content %}{% endblock %}</main>
-        <footer></footer>
+        <header>
+            {% include 'header.html' %}
+        </header>
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+        <footer>
+            {% include 'footer.html' %}
+        </footer>
         {% comment %} {% block javascripts %} {% endblock %} {% endcomment %}
     </body>
 </html>

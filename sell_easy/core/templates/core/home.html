@@ -1,8 +1,65 @@
 {% extends 'base.html' %}
+{% comment %} {% extends 'base.css' %} {% endcomment %}
 
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
+{# BANNER SECTION #}
+<section>
+    <img src="">
+</section>
+{# CATEGORY SECTION #}
+<section>
+    CATEGORY
+    <div class='section-heading'>
+        <h2>Product Categories</h2>
+        <div class='view all'>
+            <p>View All</p>
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </div>
+    <div class='section-grid'>
+        {% for category in categories %}
+        <div class= 'card'>
+        </div>
+        {% endfor %}
+       
+</section>
+{# PRODUCTS SECTION #}
+<section>
+    <div class= 'section-heading'>
+
+    </div>
+</section>
+
+
+{# DISCOUNT SECTION #}
+<section>
+    <div>
+        <h4>20% DISCOUNT</h4>
+    </div>
+
+    <div></div>
+</section>
+
+{# BEST SELLER SECTION #}
+<section>
+    BEST SELLER
+</section>
+{# STORES SECTION #}
+<section>
+    STORES
+</section>
+{# OTHERS SECTION #}
+<section>
+    OTHERS
+</section>
+
+
+
+
+
     <h1>{{ title }}</h1>
     <p>{{ content }}</p>
+  
 {% endblock %}

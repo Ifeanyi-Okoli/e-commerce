@@ -4,22 +4,24 @@ from .models import Products, Store, Category
 
 # Create your views here.
 
+def home(request):
+    products = Products.objects.all().values()
+    # best_selling_products = products.filter('price')
+    # products = products
+    categories = Category.objects.all()
+    stores = Store.objects.all()
+   
 
-# def web_page(products):
-#     page = "<url>"
-#     for product in products:
-#         page += f"""<li><h1>{product["name"]}</h1><h2>{product["desc"]}</h2><p>{product["price"]}</p></li>"""
-        
-#     page+= "</ul>"
-#     return page
+    context={
+        "products": products,
+        # "best_selling_products": best_selling_products,
+        "categories": categories,
+        "stores": stores,
+    }
+    
+    return render(request, "core/home.html", context)
 
-# def store_page(products):
-#     page = "<url>"
-#     for store in stores:
-#         page += f"<li><h1>{store.name}</h1><h2>{store.tagline}</h2><p>{store.owner.username}, Welcome</p></li>"
-        
-#     page+= "</ul>"
-#     return page
+
 
 
 def products(request):

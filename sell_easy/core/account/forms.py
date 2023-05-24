@@ -2,7 +2,7 @@ from django import forms
 from .models import Profile
 
 class LoginForm(forms.Form):
-    email = forms.EmailField(label=('Email'), required=True)
+    email = forms.EmailField(label='Email', required=True)
     password = forms.CharField(label='password', widget=forms.PasswordInput)
     
     
